@@ -1,45 +1,28 @@
 'use strict'
-import './process.js' // * as process from 
+import './process.js' //
 import { finishTest } from '../iso-test/index.js'
-
-finishTest(`pass
-${Object.keys(process.env)}
-${Object.values(process.env)}`)
 
 async function setup () {
   // set up test environment before loading module
   if (typeof(window) === 'object' && window.localStorage) {
     localStorage.clear()
-    var response = await fetch('./.env').catch(finishTest)
-      finishTest(`pass
-${response}`)
-    if (response && response.ok) {
-      var resp = await response.text()
-      finishTest(`pass
-${resp}`)
-
-      resp.split('\n').forEach(l => {
-        if (l.startsWith('USER=')) process.env.USER = l.slice(5)
-        else if (l.startsWith('HOME=')) process.env.HOME = l.slice(5)
-        else if (l.startsWith('PWD=')) process.env.PWD = l.slice(4)
-      })
+    if (window.sysenv) {
+      process.env.USER = window.sysenv.USER
+      process.env.HOME = window.sysenv.HOME
+      //process.env.PWD = window.sysenv.PWD
     } else {
-      throw new Error('Unable to load environment vars. Set in .env for testing.')
+      throw new Error('Unable to load environment vars.')
     }
-    finishTest(`pass
-${JSON.stringify({
-      USER: process.env.USER,
-      HOME: process.env.HOME
-    })}`)
     localStorage.setItem('env', JSON.stringify({
       USER: process.env.USER,
       HOME: process.env.HOME
     }))
   } else {
     // write USER, HOME, PWD to .env file for browser to load for testing
-    require('fs').writeFileSync('.env', `USER=${process.env.USER}
+/*    require('fs').writeFileSync('.env', `USER=${process.env.USER}
 HOME=${process.env.HOME}
-PWD=${process.env.PWD}`)
+PWD=${process.env.PWD}
+`)*/
   }
 }
 
