@@ -1,6 +1,6 @@
 'use strict'
-import * as hrtime from '../browser-process-hrtime/index.js'
-import * as nextTick from '../next-tick/index.js'
+//import * as hrtime from '../browser-process-hrtime/index.js'
+//import * as nextTick from '../next-tick/index.js'
 
 function cwd () {
   return this.env.PWD
