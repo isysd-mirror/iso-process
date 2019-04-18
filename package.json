@@ -1,0 +1,32 @@
+{
+  "name": "@guld/process",
+  "version": "0.2.0",
+  "description": "guld virtual runtime environment process module.",
+  "main": "process.node.js",
+  "module": "process.js",
+  "scripts": {
+    "test": "iso-test ./test.js",
+    "preinstall": "gpm -n .. -t .. -u https -i .",
+    "postinstall": "node -e \"try { require('../esm/esm.js')(module); } catch (e) {require('child_process').execSync('npm i', {cwd: require('path').join('..', 'esm')})}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isysd-mirror/process.git"
+  },
+  "keywords": [
+    "isomorphic",
+    "guld",
+    "runtime",
+    "process"
+  ],
+  "author": "isysd",
+  "license": "MIT",
+  "dependencies": {
+    "browser-process-hrtime": "../browser-process-hrtime",
+    "next-tick": "../next-tick",
+    "esm": "../esm"
+  },
+  "devDependencies": {
+    "iso-test": "../iso-test"
+  }
+}
