@@ -1,14 +1,23 @@
 'use strict'
-import './process.js'
+import './process.js' // * as process from 
 import { finishTest } from '../iso-test/index.js'
+
+finishTest(`pass
+${Object.keys(process.env)}
+${Object.values(process.env)}`)
 
 async function setup () {
   // set up test environment before loading module
   if (typeof(window) === 'object' && window.localStorage) {
     localStorage.clear()
-    var response = await fetch('./.env').catch(e => null)
+    var response = await fetch('./.env').catch(finishTest)
+      finishTest(`pass
+${response}`)
     if (response && response.ok) {
       var resp = await response.text()
+      finishTest(`pass
+${resp}`)
+
       resp.split('\n').forEach(l => {
         if (l.startsWith('USER=')) process.env.USER = l.slice(5)
         else if (l.startsWith('HOME=')) process.env.HOME = l.slice(5)
@@ -17,6 +26,11 @@ async function setup () {
     } else {
       throw new Error('Unable to load environment vars. Set in .env for testing.')
     }
+    finishTest(`pass
+${JSON.stringify({
+      USER: process.env.USER,
+      HOME: process.env.HOME
+    })}`)
     localStorage.setItem('env', JSON.stringify({
       USER: process.env.USER,
       HOME: process.env.HOME
