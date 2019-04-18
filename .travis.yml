@@ -13,7 +13,7 @@ matrix:
     addons:
       chrome: "stable"
   - os: linux
-    env: BROWSER=firefox MOZ_HEADLESS=1 TEST_TIMEOUT=10000
+    env: BROWSER=firefox MOZ_HEADLESS=1
     addons:
       firefox: "latest"
   - os: osx
@@ -26,7 +26,7 @@ matrix:
     addons:
       chrome: "stable"
   - os: osx
-    env: BROWSER=firefox MOZ_HEADLESS=1 TEST_TIMEOUT=10000
+    env: BROWSER=firefox MOZ_HEADLESS=1
     addons:
       firefox: "latest"
   - os: osx
@@ -35,7 +35,7 @@ matrix:
       homebrew:
         casks: safari
   - os: windows
-    env: BROWSER=google-chrome-stable HEADLESS=1 TEST_TIMEOUT=10000
+    env: BROWSER=google-chrome-stable HEADLESS=1
     before_install:
       - choco install googlechrome
       - npm i -g https://github.com/isysd-mirror/gpm.git#isysd
