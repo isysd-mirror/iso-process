@@ -26,6 +26,9 @@
     "next-tick": "../next-tick",
     "esm": "../esm"
   },
+  "peerDependencies": {
+    "gpm": "https://github.com/isysd-mirror/gpm.git#isysd"
+  },
   "devDependencies": {
     "iso-test": "../iso-test"
   }
