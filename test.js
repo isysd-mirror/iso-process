@@ -26,6 +26,7 @@ else finishTest(`fail process.env.USER: ${process.env.USER}`)
 if (process.env.HOME === `/@${process.env.USER}`) finishTest('pass process.env.HOME')
 else finishTest(`fail process.env.HOME: ${process.env.HOME}`)
 
+/*
 if (typeof(window) === 'object') {
   if (process.title && process.title === 'browser') finishTest('pass title')
   else finishTest(`fail process.title: ${process.title}`)
@@ -33,6 +34,7 @@ if (typeof(window) === 'object') {
   if (process.title && process.title === 'node') finishTest('pass title')
   else finishTest(`fail process.title: ${process.title}`)
 }
+*/
 
 if (process.env.PWD && process.env.PWD.match(/\/process\/*$/)) finishTest('pass process.env.PWD')
 else finishTest(`fail process.env.PWD: ${process.env.PWD}`)
