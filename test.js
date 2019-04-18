@@ -23,7 +23,7 @@ async function setup () {
     }))
   } else {
     // write USER, HOME, PWD to .env file for browser to load for testing
-    require('fs').writeFileSync('./.env', `USER=${process.env.USER}
+    require('fs').writeFileSync('.env', `USER=${process.env.USER}
 HOME=${process.env.HOME}
 PWD=${process.env.PWD}`)
   }
@@ -57,4 +57,11 @@ async function run () {
   finishTest('kill')
 }
 
-setup().then(run)
+setup()
+  .catch(e => {
+    finishTest(e)
+  })
+  .then(run)
+  .catch(e => {
+    finishTest(e)
+  })
