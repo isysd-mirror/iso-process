@@ -1,25 +1,14 @@
 'use strict'
-import './process.js' //
+import global from '../global/global.js'
+import { Process } from '../process/process.js'
 import { finishTest } from '../iso-test/index.js'
+global.process = Process.getProcess()
 
-if (typeof(window) === 'object' && window.localStorage) {
-  localStorage.clear()
-  if (window.sysenv) {
-    process.env.USER = window.sysenv.USER
-    process.env.HOME = window.sysenv.HOME
-    //process.env.PWD = window.sysenv.PWD
-  } else {
-    throw new Error('Unable to load environment vars.')
-  }
-  localStorage.setItem('env', JSON.stringify({
-    USER: process.env.USER,
-    HOME: process.env.HOME
-  }))
-}
+if (global && global.global) finishTest('pass global defined')
 
-// refresh environment from localStorage
-// required after setup bootstrap, but not on reload
-process.refreshEnv()
+if (process instanceof Process) finishTest('pass instanceof Process')
+else finishTest('fail process not instanceof Process')
+
 if (process.env && process.env.USER && process.env.USER !== 'undefined') finishTest('pass process.env.USER')
 else finishTest(`fail process.env.USER: ${process.env.USER}`)
 
