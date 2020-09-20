@@ -3,6 +3,8 @@ before_install:
   - gpm -n .. -t .. -u https -d 1 -i iso-test
   - npm i ../iso-test
   - export NODE_ENV=production
+install:
+  - npm i
 matrix:
   include:
   - os: linux
