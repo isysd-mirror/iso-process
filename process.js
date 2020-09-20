@@ -92,7 +92,7 @@ export class Process {
     if (typeof env === 'object') {
       this.chenv = env
       this.pwd = this.chenv.PWD
-      this.chenv.HOME = `/@${this.chenv.USER}`
+      // this.chenv.HOME = `/@${this.chenv.USER}`
       this.chenv.startTime = this.chenv.startTime || Date.now()
     } else if (typeof localStorage !== 'undefined') {
       env = localStorage.getItem('env')
