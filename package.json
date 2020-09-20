@@ -1,12 +1,12 @@
 {
   "name": "@guld/process",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "guld virtual runtime environment process module.",
   "main": "process.node.js",
   "module": "process.js",
   "scripts": {
     "test": "iso-test ./test.js",
-    "preinstall": "gpm -n .. -t .. -u https -i .",
+    "preinstall": "gpm -n ../.. -t ../.. -u https -i .",
     "postinstall": "node -e \"try { require('../../esm/esm.js')(module); } catch (e) {require('child_process').execSync('npm i', {cwd: require('path').join('..', '..', 'esm')})}\""
   },
   "repository": {
@@ -22,13 +22,13 @@
   "author": "isysd",
   "license": "MIT",
   "dependencies": {
-    "esm": "../esm",
-    "global": "https://github.com/isysd-mirror/global.git"
+    "esm": "../../esm",
+    "global": "../global"
   },
   "peerDependencies": {
     "@isysd/gpm": "https://github.com/isysd-mirror/gpm.git"
   },
   "devDependencies": {
-    "iso-test": "https://github.com/isysd-mirror/iso-test.git"
+    "iso-test": "../../iso-test"
   }
 }
