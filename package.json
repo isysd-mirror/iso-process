@@ -1,6 +1,6 @@
 {
   "name": "iso-process",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Isometric virtual runtime environment process module.",
   "main": "process.node.js",
   "module": "process.js",
@@ -26,7 +26,7 @@
     "always-global": "../always-global"
   },
   "peerDependencies": {
-    "@isysd/gpm": "https://github.com/isysd-mirror/gpm.git"
+    "gpm": "https://github.com/IonicaBizau/gpm.git"
   },
   "devDependencies": {
     "iso-test": "../iso-test"
