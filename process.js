@@ -2,7 +2,7 @@
 'use strict'
 // import * as hrtime from '../browser-process-hrtime/index.js'
 // import * as nextTick from '../next-tick/index.js'
-import global from '../global/global.js'
+import global from '../always-global/global.js'
 
 function notImplemented () {
   throw new Error('Not Implemented')

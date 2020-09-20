@@ -1,7 +1,7 @@
 'use strict'
-import global from '../global/global.js'
+import global from '../always-global/global.js'
 import { Process } from './process.js'
-import { finishTest } from '../../iso-test/index.js'
+import { finishTest } from '../iso-test/index.js'
 global.process = Process.getProcess()
 
 if (global && global.global) finishTest('pass global defined')

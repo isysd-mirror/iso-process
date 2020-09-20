@@ -1,13 +1,13 @@
 {
-  "name": "@guld/process",
-  "version": "0.3.2",
-  "description": "guld virtual runtime environment process module.",
+  "name": "iso-process",
+  "version": "0.3.3",
+  "description": "Isometric virtual runtime environment process module.",
   "main": "process.node.js",
   "module": "process.js",
   "scripts": {
     "test": "iso-test ./test.js",
-    "preinstall": "gpm -n ../.. -t ../.. -u https -i .",
-    "postinstall": "node -e \"try { require('../../esm/esm.js')(module); } catch (e) {require('child_process').execSync('npm i', {cwd: require('path').join('..', '..', 'esm')})}\""
+    "preinstall": "gpm -n .. -t .. -u https -d 1 -i .",
+    "postinstall": "node -e \"try { require('../esm/esm.js')(module); } catch (e) {require('child_process').execSync('npm i', {cwd: require('path').join('..', 'esm')})}\""
   },
   "repository": {
     "type": "git",
@@ -22,13 +22,13 @@
   "author": "isysd",
   "license": "MIT",
   "dependencies": {
-    "esm": "../../esm",
-    "global": "../global"
+    "esm": "../esm",
+    "always-global": "../always-global"
   },
   "peerDependencies": {
     "@isysd/gpm": "https://github.com/isysd-mirror/gpm.git"
   },
   "devDependencies": {
-    "iso-test": "../../iso-test"
+    "iso-test": "../iso-test"
   }
 }
