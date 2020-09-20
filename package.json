@@ -7,7 +7,7 @@
   "scripts": {
     "test": "iso-test ./test.js",
     "preinstall": "gpm -n .. -t .. -u https -i .",
-    "postinstall": "node -e \"try { require('../esm/esm.js')(module); } catch (e) {require('child_process').execSync('npm i', {cwd: require('path').join('..', 'esm')})}\""
+    "postinstall": "node -e \"try { require('../../esm/esm.js')(module); } catch (e) {require('child_process').execSync('npm i', {cwd: require('path').join('..', '..', 'esm')})}\""
   },
   "repository": {
     "type": "git",
