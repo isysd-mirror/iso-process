@@ -1,10 +1,12 @@
 before_install:
   - npm i -g https://github.com/isysd-mirror/gpm.git#isysd
   - gpm -n .. -t .. -u https -d 1 -i iso-test
-  - npm i ../iso-test
+  - npm i iso-test
   - export NODE_ENV=production
 install:
   - npm i
+cache:
+  npm: false
 matrix:
   include:
   - os: linux
@@ -44,7 +46,7 @@ matrix:
       - choco install googlechrome
       - npm i -g https://github.com/isysd-mirror/gpm.git#isysd
       - gpm -n .. -t .. -u https -d 1 -i iso-test
-      - npm i ../iso-test
+      - npm i iso-test
 
 # 
 # Firefox and Chromium not working on Windows, for some reason :/
