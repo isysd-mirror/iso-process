@@ -29,6 +29,6 @@
     "@isysd/gpm": "https://github.com/isysd-mirror/gpm.git"
   },
   "devDependencies": {
-    "iso-test": "../iso-test"
+    "iso-test": "https://github.com/isysd-mirror/iso-test.git"
   }
 }
