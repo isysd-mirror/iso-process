@@ -4,8 +4,6 @@ before_install:
   - gpm -n .. -t .. -u https -d 1 -i standard
 install:
   - npm i
-cache:
-  npm: false
 matrix:
   include:
   - os: linux
