@@ -9,11 +9,11 @@ if (global && global.global) finishTest('pass global defined')
 if (process instanceof Process) finishTest('pass instanceof Process')
 else finishTest('fail process not instanceof Process')
 
-//if (process.env && process.env.USER && process.env.USER !== 'undefined') finishTest('pass process.env.USER')
-//else finishTest(`fail process.env.USER: ${process.env.USER}`)
+// if (process.env && process.env.USER && process.env.USER !== 'undefined') finishTest('pass process.env.USER')
+// else finishTest(`fail process.env.USER: ${process.env.USER}`)
 
-//if (process.env.HOME === `/@${process.env.USER}`) finishTest('pass process.env.HOME')
-//else finishTest(`fail process.env.HOME: ${process.env.HOME}`)
+// if (process.env.HOME === `/@${process.env.USER}`) finishTest('pass process.env.HOME')
+// else finishTest(`fail process.env.HOME: ${process.env.HOME}`)
 
 /*
 if (typeof(window) === 'object') {
