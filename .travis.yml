@@ -1,8 +1,7 @@
 before_install:
-  - npm i -g https://github.com/isysd-mirror/gpm.git#isysd
+  - npm i -g https://github.com/IonicaBizau/gpm.git
   - gpm -n .. -t .. -u https -d 1 -i iso-test
   - npm i iso-test
-  - export NODE_ENV=production
 install:
   - npm i
 cache:
@@ -10,41 +9,41 @@ cache:
 matrix:
   include:
   - os: linux
-    env: BROWSER=chromium-browser HEADLESS=1 NODE_ENV=production
+    env: BROWSER=chromium-browser HEADLESS=1
     addons:
       apt:
         packages: chromium-browser
   - os: linux
-    env: BROWSER=google-chrome-stable HEADLESS=1 NODE_ENV=production
+    env: BROWSER=google-chrome-stable HEADLESS=1
     addons:
       chrome: "stable"
   - os: linux
-    env: BROWSER=firefox MOZ_HEADLESS=1 NODE_ENV=production
+    env: BROWSER=firefox MOZ_HEADLESS=1
     addons:
       firefox: "latest"
   - os: osx
-    env: BROWSER=chromium-browser HEADLESS=1 NODE_ENV=production
+    env: BROWSER=chromium-browser HEADLESS=1
     addons:
       homebrew:
         casks: chromium
   - os: osx
-    env: BROWSER=google-chrome-stable HEADLESS=1 NODE_ENV=production
+    env: BROWSER=google-chrome-stable HEADLESS=1
     addons:
       chrome: "stable"
   - os: osx
-    env: BROWSER=firefox MOZ_HEADLESS=1 NODE_ENV=production
+    env: BROWSER=firefox MOZ_HEADLESS=1
     addons:
       firefox: "latest"
   - os: osx
-    env: BROWSER=safari HEADLESS=1 NODE_ENV=production
+    env: BROWSER=safari HEADLESS=1
     addons:
       homebrew:
         casks: safari
   - os: windows
-    env: BROWSER=google-chrome-stable HEADLESS=1 NODE_ENV=production
+    env: BROWSER=google-chrome-stable HEADLESS=1
     before_install:
       - choco install googlechrome
-      - npm i -g https://github.com/isysd-mirror/gpm.git#isysd
+      - npm i -g https://github.com/IonicaBizau/gpm.git
       - gpm -n .. -t .. -u https -d 1 -i iso-test
       - npm i iso-test
 
