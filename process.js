@@ -55,7 +55,8 @@ export class Process {
     this.stdin = this.options.stdin || notImplemented
     this.stdout = this.options.stdout || notImplemented
     this.throwDeprecation = this.options.throwDeprecation || false
-    this.title = this.options.title || window.title || 'browser'
+    if (typeof (window) !== 'undefined') this.title = this.options.title || window.title || 'browser'
+    else this.title = this.options.title || 'browser'
     this.traceDeprecation = this.options.traceDeprecation || false
     // this.umask = this.options.umask || notImplemented
     // this.uptime = this.options.uptime || notImplemented
