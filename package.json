@@ -1,12 +1,11 @@
 {
   "name": "iso-process",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "description": "Isometric virtual runtime environment process module.",
   "main": "process.node.js",
   "module": "process.js",
   "scripts": {
     "test": "iso-test ./test.js",
-    "lint": "standard *.js",
     "preinstall": "gpm -n .. -t .. -u https -d 1 -i .",
     "postinstall": "node -e \"try { require('../esm/esm.js')(module); } catch (e) {require('child_process').execSync('npm i', {cwd: require('path').join('..', 'esm')})}\""
   },
@@ -30,7 +29,6 @@
     "gpm": "https://github.com/IonicaBizau/gpm.git"
   },
   "devDependencies": {
-    "iso-test": "../iso-test",
-    "standard": "../standard"
+    "iso-test": "../iso-test"
   }
 }
