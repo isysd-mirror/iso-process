@@ -25,10 +25,10 @@ if (typeof(window) === 'object') {
 }
 */
 
-if (process.env.PWD && process.env.PWD.indexOf('/iso-process') >= 0) finishTest('pass process.env.PWD')
+if (process.env.PWD && process.env.PWD.indexOf('process') >= 0) finishTest('pass process.env.PWD')
 else finishTest(`fail process.env.PWD: ${process.env.PWD}`)
 
-if (process.cwd && process.cwd().indexOf('/iso-process') >= 0) finishTest('pass process.cwd')
+if (process.cwd && process.cwd().indexOf('process') >= 0) finishTest('pass process.cwd')
 else finishTest(`fail process.cwd: ${process.cwd()}`)
 
 // all passed! send kill to finishtest
