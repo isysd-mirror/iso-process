@@ -176,4 +176,8 @@ export class Process {
   uptime () {
     return (Date.now() - this.env.startTime) / 1000
   }
+
+  get isNode () {
+    return this.release && this.release.name === 'node' && typeof (require) !== 'undefined'
+  }
 }
